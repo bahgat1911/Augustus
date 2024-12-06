@@ -1,0 +1,10 @@
+FROM node:latest
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+ENV MONGO_URI=mongodb://mongo_container:27017/mydb
+RUN curl -sS https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh -o /wait-for-it.sh
+RUN chmod +x /wait-for-it.sh
+EXPOSE 3000
+CMD ["/wait-for-it.sh", "mongo_container:27017", "-t", "30", "--", "npm", "start"]

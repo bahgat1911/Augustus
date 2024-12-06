@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+
+# Docker-related files
+docker-compose.override.yml
+.dockerignore
+
+# MongoDB data (local persistence)
+mongo-data/
+
+# IDE files
+*.swp
+*.idea/
+.vscode/
+.DS_Store
+
+# Build artifacts
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
